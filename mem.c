@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define MEMSZ 1048576
+#define MEMSZ 1024
 
 int main()
 {
-    char *mem = malloc(MEMSZ);
+    void *mem = malloc(MEMSZ);
+    memset(mem, 0x0, MEMSZ);
 
     /* Write the memory out to file */
     FILE *fp = fopen("mem.img", "w+");
